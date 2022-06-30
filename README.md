@@ -2,7 +2,7 @@
 Read WinCC Taglogs from linked Server using dynamic Stored Procedure and pivot the data based on ValueID(TagName).
 
 
-### Example 
+## Example 
 ```
   declare @prj AS nvarchar(90),
   @startTimeLocal AS DATETIME,
@@ -21,10 +21,10 @@ Read WinCC Taglogs from linked Server using dynamic Stored Procedure and pivot t
 
 > Note: To read all the tags @testString should be ''(empty string) or 'all'
 
-### Wincc Linked Server Query
+## Wincc Linked Server Query
 
 
-## Building the complete command string:
+### Building the complete command string:
 
 	'"TAG:R,1,'2009-01-20 11:15:23.000',"'2009-01-20 13:26:45.000','TIMESTEP=5,261'"
 	'   |   |            |                          |                        |  |
@@ -33,18 +33,18 @@ Read WinCC Taglogs from linked Server using dynamic Stored Procedure and pivot t
 	'   |
 	'   --------- Read command for a Tag
 
-## Selection of an ValueID or ValueName:
+### Selection of an ValueID or ValueName:
 
 	Parameter                   Description
 	ValueID                     ValueID from the database table.
 	ValueName                   ValueName in the format "ArchiveName\\ValueName". The ValurName must be enclosed by single quotation marks.
 
-## Selection of an absolute Time Interval:
+### Selection of an absolute Time Interval:
 	Parameter                   Description   
 	TimeBegin                   Start time in the format YYYY-MM-DD hh.mm.ss.mmm
 	TimeEnd                     End time in the format YYYY-MM-DD hh.mm.ss.mmm
 
-## Selection of a relative Time Interval:
+### Selection of a relative Time Interval:
 
 	Parameter                   Description       
 	TimeBegin                   0000-00-00 00:00:00.000: Reads from the beginning of the recording.
@@ -57,7 +57,7 @@ Read WinCC Taglogs from linked Server using dynamic Stored Procedure and pivot t
                               <TimeEnd> = 2002-02-02 12:00:00.000: Reads 10 seconds
                               back.
 
-## TIMESTEP:
+### TIMESTEP:
 
 	- The first parameter "TimeStep" is specified as an interval in seconds via the
 		user interface of the Excel client.
@@ -71,7 +71,7 @@ Read WinCC Taglogs from linked Server using dynamic Stored Procedure and pivot t
 		parameter is also known as the aggregation type and is responsible for
 		creating intermediate values
 
-## TimeStepModes:
+### TimeStepModes:
 
 	Without                 With
 	interpolation           interpolation                       Meaning
