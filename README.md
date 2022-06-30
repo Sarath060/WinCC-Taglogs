@@ -10,11 +10,11 @@ Read WinCC Taglogs from linked Server using dynamic Stored Procedure and pivot t
   @timeStepInterpolation AS varchar(20),
   @testString AS VARCHAR(max)
 
-  SET @prj = 'CC_Examp_22_06_02_11_44_39R'          -- Project Archive 'CC******R'
-  SET @testString = ''                              --Value-ID or Tagname with ";" Delimiter
-  SET @startTimeLocal = '2022-06-28 20:00:00'       --Format YYYY-MM-DD hh.mm.ss.mmm
-  SET @endTimeLocal = '2022-06-28 20:10:00'         --Format YYYY-MM-DD hh.mm.ss.mmm
-  SET @timeStepInterpolation = 'TIMESTEP=60,257'    --Format 'Time_Step,interpolation'
+  SET @prj = 'CC_Example_22_06_02_11_44_39R'        -- Project Archive 'CC_******R'
+  SET @testString = ''                              -- Value-ID or Tagname with ";" Delimiter
+  SET @startTimeLocal = '2022-06-28 20:00:00'       -- Format YYYY-MM-DD hh.mm.ss.mmm
+  SET @endTimeLocal = '2022-06-28 20:10:00'         -- Format YYYY-MM-DD hh.mm.ss.mmm
+  SET @timeStepInterpolation = 'TIMESTEP=60,257'    -- Format 'Time_Step,interpolation'
 
   exec dbo.spWinccTagLogsPivoted @prj,@testString,@startTimeLocal,@endTimeLocal,@timeStepInterpolation
 ```
@@ -37,8 +37,7 @@ Read WinCC Taglogs from linked Server using dynamic Stored Procedure and pivot t
 
 	Parameter                   Description
 	ValueID                     ValueID from the database table.
-	ValueName                   ValueName in the format "ArchiveName\\ValueName". The
-								              ValurName must be enclosed by single quotation marks.
+	ValueName                   ValueName in the format "ArchiveName\\ValueName". The ValurName must be enclosed by single quotation marks.
 
 ## Selection of an absolute Time Interval:
 	Parameter                   Description   
@@ -76,7 +75,6 @@ Read WinCC Taglogs from linked Server using dynamic Stored Procedure and pivot t
 
 	Without                 With
 	interpolation           interpolation                       Meaning
-  ---------------------------------------------------------------------------------------------------------
 	1 (FIRST)               257 (FIRST_INTERPOLATED)            First value
 	2 (LAST)                258 (LAST_INTERPOLATED)             Last value
 	3 (MIN)                 259 (MIN_INTERPOLATED)              Minimum value
