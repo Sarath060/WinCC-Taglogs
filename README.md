@@ -49,7 +49,9 @@ Read WinCC Taglogs from linked Server using dynamic Stored Procedure and pivot t
 	Parameter                   Description       
 	TimeBegin                   0000-00-00 00:00:00.000: Reads from the beginning of the recording.
 	TimeEnd                     0000-00-00 00:00:00.000: Reads until the end of the recording.
-----
+	
+> Note: Relative time interval input is not valid.
+
 	Example 1                   <TimeBegin> = From 2002-02-02 12:00:00.000 until
                               <TimeEnd> = 0000-00-00 00:00:10.000: Reads 10 seconds
                               forward.
